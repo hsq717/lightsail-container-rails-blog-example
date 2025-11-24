@@ -1,0 +1,542 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+/* Base styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.header h1 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  line-height: 1.5;
+  height: 38px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.btn-outline:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* Fix button_to styling */
+form[method="post"] {
+  display: inline;
+}
+
+form[method="post"] input[type="submit"] {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  font-family: inherit;
+  line-height: 1.5;
+  vertical-align: middle;
+  box-sizing: border-box;
+  min-height: 38px !important;
+  height: 38px !important;
+}
+
+form[method="post"] input[type="submit"].btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+form[method="post"] input[type="submit"].btn-danger:hover {
+  background-color: #c82333;
+}
+
+form[method="post"] input[type="submit"].btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* Additional delete button styling to match edit button exactly */
+.post-actions form[method="post"] input[type="submit"] {
+  display: inline-block !important;
+  padding: 8px 16px !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  font-size: 14px !important;
+  font-family: inherit !important;
+  line-height: 1.5 !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  box-sizing: border-box !important;
+  vertical-align: middle !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s !important;
+}
+
+.post-actions form[method="post"] input[type="submit"].btn-danger {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.post-actions form[method="post"] input[type="submit"].btn-danger:hover {
+  background-color: #c82333 !important;
+}
+
+/* Post card styles */
+.post-card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-card h2 {
+  margin: 0 0 12px 0;
+}
+
+.post-card h2 a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.post-card h2 a:hover {
+  color: #007bff;
+}
+
+.post-meta {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.post-meta span {
+  margin-right: 16px;
+}
+
+.post-content {
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.post-images {
+  margin: 16px 0;
+}
+
+.post-thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.post-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Individual post styles */
+.post {
+  background: white;
+  border-radius: 8px;
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.post-header h1 {
+  color: #2c3e50;
+  margin: 0 0 12px 0;
+}
+
+.post-images .image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.post-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Comments styles */
+.comments-section {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comment-form {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.comment {
+  padding: 16px 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.comment-date {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.comment-content {
+  line-height: 1.6;
+}
+
+.no-comments {
+  color: #6c757d;
+  font-style: italic;
+  text-align: center;
+  padding: 32px;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.form-check {
+  margin: 16px 0;
+}
+
+.form-check-input {
+  margin-right: 8px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.form-text {
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+/* Alert styles */
+.alert {
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.alert h4 {
+  margin: 0 0 8px 0;
+}
+
+.alert ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 64px 32px;
+  color: #6c757d;
+}
+
+.empty-state h3 {
+  margin-bottom: 16px;
+  color: #495057;
+}
+
+/* Current images in edit form */
+.current-images {
+  margin: 20px 0;
+}
+
+.current-images .image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.current-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Direct upload styles */
+.direct-upload {
+  display: inline-block;
+  position: relative;
+  padding: 2px 4px;
+  margin: 0 3px 3px 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.direct-upload--pending {
+  opacity: 0.6;
+}
+
+.direct-upload__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #0076ff;
+  transition: width 120ms ease-out, opacity 60ms 60ms ease-in;
+  transform: translate3d(0, 0, 0);
+}
+
+.direct-upload--complete .direct-upload__progress {
+  opacity: 0;
+}
+
+.direct-upload__filename {
+  position: relative;
+  z-index: 1;
+  padding: 0 10px;
+  color: #333;
+}
+
+.direct-upload--error {
+  border-color: red;
+}
+
+.direct-upload--error .direct-upload__filename {
+  color: red;
+}
+
+/* File upload progress container */
+.file-upload-progress {
+  margin-top: 10px;
+}
+
+/* Direct Upload Progress Styles */
+.direct-upload-progress {
+  margin: 10px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.direct-upload-progress .upload-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.direct-upload-progress .filename {
+  font-weight: 500;
+  color: #495057;
+}
+
+.direct-upload-progress .status {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: #007bff;
+  color: white;
+}
+
+.direct-upload-progress .status.success {
+  background: #28a745;
+}
+
+.direct-upload-progress .status.error {
+  background: #dc3545;
+}
+
+.direct-upload-progress .progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.direct-upload-progress .progress-fill {
+  height: 100%;
+  background: #007bff;
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+.direct-upload-progress .error-details {
+  margin-top: 8px;
+  padding: 8px;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  color: #721c24;
+  font-size: 12px;
+}
+
+.direct-upload-progress .error-details strong {
+  color: #721c24;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .post-actions {
+    justify-content: center;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .comment-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

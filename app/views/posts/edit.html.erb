@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>Edit Post</h1>
+
+  <%= form_with model: @post, local: true, multipart: true do |form| %>
+    <% if @post.errors.any? %>
+      <div class="alert alert-danger">
+        <h4><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h4>
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :author %>
+      <%= form.text_field :author, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :content %>
+      <%= form.text_area :content, rows: 10, class: 'form-control', required: true %>
+    </div>
+
+    <% if @post.images.any? %>
+      <div class="current-images">
+        <h4>Current Images</h4>
+        <div class="image-gallery">
+          <% @post.images.each do |image| %>
+            <div class="image-item">
+              <%= image_tag image, class: 'current-image' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :images, "Upload New Images" %>
+      <%= form.file_field :images, multiple: true, accept: 'image/*', class: 'form-control', direct_upload: true %>
+      <small class="form-text text-muted">You can select multiple images. New images will be added to existing ones.</small>
+    </div>
+
+    <div class="form-actions">
+      <%= form.submit 'Update Post', class: 'btn btn-primary' %>
+      <%= link_to 'Show', @post, class: 'btn btn-secondary' %>
+      <%= link_to 'Back', posts_path, class: 'btn btn-outline' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="header">
+    <h1>Blog Posts</h1>
+    <%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
+  </div>
+
+  <div class="posts">
+    <% if @posts.any? %>
+      <% @posts.each do |post| %>
+        <article class="post-card">
+          <h2><%= link_to post.title, post %></h2>
+          <div class="post-meta">
+            <span>By <%= post.author %></span>
+            <span><%= post.created_at.strftime("%B %d, %Y") %></span>
+            <span><%= pluralize(post.comments.count, 'comment') %></span>
+          </div>
+          <div class="post-content">
+            <%= truncate(post.content, length: 200) %>
+          </div>
+          <% if post.valid_images.any? %>
+            <div class="post-images">
+              <% post.valid_images.first(3).each do |image| %>
+                <%= image_tag image, class: 'post-thumbnail' %>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="post-actions">
+            <%= link_to 'Read More', post, class: 'btn btn-outline' %>
+            <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-secondary' %>
+            <%= button_to 'Delete', post, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          </div>
+        </article>
+      <% end %>
+    <% else %>
+      <div class="empty-state">
+        <h3>No posts yet</h3>
+        <p>Be the first to create a blog post!</p>
+        <%= link_to 'Create First Post', new_post_path, class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
