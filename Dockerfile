@@ -55,8 +55,10 @@ FROM base
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build /rails /rails
 
+# set to use your customized role for container
 RUN mkdir -p /root/.aws && \
-    echo '[default]\nrole_arn=<your role arn>\ncredential_source=EcsContainer\nregion=<region>\noutput=json' > /root/.aws/config
+    echo '[default]\nrole_arn=<role arn>\ncredential_source=EcsContainer\nregion=<region>\noutput=json' > /root/.aws/config
+
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
