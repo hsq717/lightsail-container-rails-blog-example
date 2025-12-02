@@ -54,10 +54,10 @@ production:
     adapter: postgresql
     encoding: unicode
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    database: <%= ENV.fetch("DATABASE_NAME") { "database-rails" } %>
-    username: <%= ENV.fetch("DATABASE_USERNAME") { "dbmasteruser" } %>
+    database: <%= ENV.fetch("DATABASE_NAME") { "deafult_name" } %>
+    username: <%= ENV.fetch("DATABASE_USERNAME") { "deafult_username" } %>
     password: <%= ENV["DATABASE_PASSWORD"] %>
-    host: <%= ENV.fetch("DATABASE_HOST") { "ls-13e51c00cd60e0d469a8d8f96adcac58ee51789f.cfweuq8wu3sn.us-west-2.rds.amazonaws.com" } %>
+    host: <%= ENV.fetch("DATABASE_HOST") { "localhost" } %>
     port: <%= ENV.fetch("DATABASE_PORT") { 5432 } %>
   cache:
     <<: *primary_production
